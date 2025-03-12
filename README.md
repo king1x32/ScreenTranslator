@@ -1,6 +1,6 @@
 [Screen Translator](https://github.com/OneMoreGres/ScreenTranslator) + AI 🤖
 
-Now, I have no idea if some of those fancy paid APIs actually work—because, well, I’m too broke to afford them. But hey, Gemini is free, and OpenRouter has a few free models too, so why not give it a shot?
+Now, I have no idea if some of those fancy paid APIs actually work—because, well, I’m too broke to afford them. But hey, Gemini, Groq, Github is free and OpenRouter has a few free models too, so why not give it a shot?
 As for my coding skills... let's just say my code might look like a dumpster fire. But who cares? As long as it runs, it works!
 I’d be incredibly grateful for any support during tough times. If you’d like to help, you can treat me to a meal [here ✿](https://paypal.me/suki8898)
 Thank you so much!
