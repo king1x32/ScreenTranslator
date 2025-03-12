@@ -9,5 +9,5 @@ Copy the necessary files into the Translators folder, add your API key, and modi
 
 ![Image](https://github.com/user-attachments/assets/0ff7ea72-d703-4c59-92be-55b34c75cc23)
 
-Note: Every time you edit the file (✅ gemin_api.js), you need to uncheck it (⬜ gemin_api.js) > click Apply, then check it again (✅ gemin_api.js) > click OK.
+Note: Every time you edit the file (✅ gemini_api.js), you need to uncheck it (⬜ gemini_api.js) > click Apply, then check it again (✅ gemini_api.js) > click OK.
 Or simply restart Screen Translator!
