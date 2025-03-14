@@ -1,6 +1,6 @@
 const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your Groq API key https://console.groq.com/keys
 const MODEL = 'qwen-2.5-32b'; // Models and free limits https://console.groq.com/dashboard/limits , prici ng https://groq.com/pricing/
-const API_URL = 'https://api.groq.com/Groq/v1/chat/completions';
+const API_URL = 'https://api.groq.com/openai/v1/chat/completions'';
 const MAX_TOKENS = 2000;
 const TEMPERATURE = 0.5; // Controls the randomness of the output, lower values are more deterministic and higher values are more random (0 - 2)
 
@@ -17,7 +17,7 @@ function translate(text, from, to) {
     const requestBody = {
         model: MODEL,
         temperature: TEMPERATURE, 
-        max_tokens: MAX_TOKENS,
+        max_completion_tokens: MAX_TOKENS,
         messages: [{
             role: "user",
             content: prompt
