@@ -1,5 +1,5 @@
 const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your Gemini API key https://aistudio.google.com/app/apikey
-const MODEL = 'gemini-1.5-flash'; // Models and pricing https://ai.google.dev/gemini-api/docs/pricing
+const MODEL = 'gemini-2.0-flash'; // Models and pricing https://ai.google.dev/gemini-api/docs/models https://ai.google.dev/gemini-api/docs/pricing
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 const MAX_TOKENS = 2000;
 const TEMPERATURE = 0.5; // Controls the randomness of the output, lower values are more deterministic and higher values are more random (0 - 2)
@@ -27,19 +27,23 @@ function translate(text, from, to) {
         safetySettings: [
             {
                 category: "HARM_CATEGORY_HARASSMENT",
-                threshold: "BLOCK_NONE",
+                threshold: "OFF",
             },
             {
                 category: "HARM_CATEGORY_HATE_SPEECH",
-                threshold: "BLOCK_NONE",
+                threshold: "OFF",
             },
             {
                 category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                threshold: "BLOCK_NONE",
+                threshold: "OFF",
             },
             {
                 category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                threshold: "BLOCK_NONE",
+                threshold: "OFF",
+            },
+            {
+                category: "HARM_CATEGORY_CIVIC_INTEGRITY",
+                threshold: "OFF",
             }
         ],
     };
