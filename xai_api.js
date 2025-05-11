@@ -24,8 +24,8 @@ function translate(text, from, to) {
             }, {
             role: "user",
             content: text
-            }] 
-        };
+        }] 
+    };
 
     fetch(API_URL, {
         method: 'POST',
