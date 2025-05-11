@@ -12,7 +12,7 @@ function translate(text, from, to) {
         return;
     }
 
-        const prompt = `Translate from ${from} to ${to} and return only the translated text`;
+    const prompt = `Translate from ${from} to ${to} and return only the translated text`;
     
     const requestBody = {
         model: MODEL,
