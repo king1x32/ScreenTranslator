@@ -1,5 +1,5 @@
 const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your OpenRouter API key https://openrouter.ai/settings/keys
-const MODEL = 'google/gemini-2.0-flash-lite-preview-02-05:free'; //Models and pricing https://openrouter.ai/models
+const MODEL = 'nousresearch/deephermes-3-mistral-24b-preview:free'; //Models and pricing https://openrouter.ai/models
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const MAX_TOKENS = 2000;
 const TEMPERATURE = 0.5; // Controls the randomness of the output, lower values are more deterministic and higher values are more random (0 - 2)
@@ -12,17 +12,20 @@ function translate(text, from, to) {
         return;
     }
 
-    const prompt = `Translate everything inside the angle brackets <<>> from ${from} to ${to} and return only the translated text, without the angle brackets: << ${text} >>`;
+    const prompt = `Translate from ${from} to ${to} and return only the translated text`;
     
     const requestBody = {
         model: MODEL,
         temperature: TEMPERATURE, 
         max_tokens: MAX_TOKENS,
         messages: [{
-            role: "user",
+            role: "system",
             content: prompt
-        }]
-    };
+            }, {
+            role: "user",
+            content: text
+            }] 
+        };
 
     fetch(API_URL, {
         method: 'POST',
