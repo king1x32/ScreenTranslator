@@ -12,18 +12,23 @@ function translate(text, from, to) {
         return;
     }
 
-    const prompt = `Translate everything inside the angle brackets <<>> from ${from} to ${to} and return only the translated text, without the angle brackets: << ${text} >>`;
+    const prompt = `Translate from ${from} to ${to} and return only the translated text`;
 
     const requestBody = {
-        contents: [{
+        system_instruction: {
             parts: [{
                 text: prompt
             }]
-        }],
-      generationConfig: {
-        temperature: TEMPERATURE,
-        maxOutputTokens: MAX_TOKENS
-      },
+        },
+        contents: {
+            parts: [{
+                text: text
+            }]
+        },
+        generationConfig: {
+            temperature: TEMPERATURE,
+            maxOutputTokens: MAX_TOKENS
+        },
         safetySettings: [
             {
                 category: "HARM_CATEGORY_HARASSMENT",
