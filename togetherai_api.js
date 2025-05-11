@@ -12,17 +12,20 @@ function translate(text, from, to) {
         return;
     }
 
-    const prompt = `Translate everything inside the angle brackets <<>> from ${from} to ${to} and return only the translated text, without the angle brackets: << ${text} >>`;
+    const prompt = `Translate from ${from} to ${to} and return only the translated text`;
 
     const requestBody = {
         model: MODEL,
         temperature: TEMPERATURE, 
         max_tokens: MAX_TOKENS,
         messages: [{
-            role: "user",
+            role: "system",
             content: prompt
-        }]
-    };
+            }, {
+            role: "user",
+            content: text
+            }] 
+        };
 
     fetch(API_URL, {
         method: 'POST',
